@@ -1,0 +1,25 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.mycompany.ekspedisipaket.layanan;
+
+/**
+ *
+ * @author User
+ */
+public class LayananEkonomi implements LayananPengiriman{
+    private static final double TARIF_PER_KG = 7_000;
+    private static final double BERAT_MAKSIMUM = 3;
+    
+    @Override
+    public String getNama(){
+        return "Ekomomi";
+    }
+    
+    @Override
+    public double hitungOngkir(double berat){
+        double beratDihitung = Math.max(berat, BERAT_MAKSIMUM);
+        return beratDihitung * TARIF_PER_KG;
+    }
+}
